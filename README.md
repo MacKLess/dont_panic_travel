@@ -46,7 +46,7 @@ To install on your own machine, follow the instructions below:
   * Index and maybe show.
 * Review
   * Structure
-    * Author
+    * User
     * Destination
     * Rating
     * Content
@@ -60,7 +60,7 @@ To install on your own machine, follow the instructions below:
     * Authentication and Authorization.
       * Users need to be logged in to leave (POST) a review.
       * Users only update (PUT) and delete (DELETE) their own reviews.
-    
+
 * Additional TODO (pick at least 2)
   * Token-Based Authentication and Authorization
   * Serialization
