@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Destination do
+describe Destination, :vcr => true do
   it 'returns a 200 success header when the API call is made' do
     destination = Destination.new()
     response = destination.get_all

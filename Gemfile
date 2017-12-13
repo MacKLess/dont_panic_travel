@@ -33,7 +33,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'rails-ujs'
-gem 'devise'
+gem 'devise', '~> 4.3.0'
 gem 'rest-client'
 gem 'faker'
 gem 'rspec-rails'
@@ -49,6 +49,8 @@ group :development, :test do
   gem 'capybara'
   gem 'simplecov', require: false
   gem 'dotenv-rails'
+  gem 'vcr'
+  gem 'webmock'
 end
 
 group :development do
