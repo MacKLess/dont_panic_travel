@@ -1,7 +1,16 @@
 class ReviewsController < ApplicationController
-  # skip_before_action :authenticate_user, only: [:index]
+
   def index
-    @trip = Trip.find(params[:trip_id])
+    if params[:trip_id]
+      @trip = Trip.find(params[:trip_id])
+      @reviews = @trip.reviews
+    else
+      @reviews = @trip.reviews
+    end
+  end
+
+  def show
+    @review = Review.find(params[:id])
   end
 
   def new

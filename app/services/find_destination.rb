@@ -4,11 +4,17 @@ class Destination
     @planet = planet
     @location = location
   end
+  #
+  # def self.get_all
+  #   response = HTTParty.get('http://api.localhost:3000/destinations')
+  #   response
+  # end
 
-  def get_all
-    response = HTTParty.get('http://api.localhost:3000/destinations')
-    response
+  def self.get_all
+    response = RestClient::Request.execute(method: :get, url: "http://api.localhost:3000/destinations")
+    return JSON.parse(response)
   end
+
 
   # def get_planet
   #   response = HTTParty.get('http://api.localhost:3000/destinations?planet=' + @planet )

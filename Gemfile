@@ -47,6 +47,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'capybara'
   gem 'simplecov', require: false
+  gem 'dontenv-rails'
 end
 
 group :development do
