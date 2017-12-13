@@ -37,6 +37,7 @@ gem 'devise'
 gem 'rest-client'
 gem 'faker'
 gem 'rspec-rails'
+gem 'httparty'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -47,7 +48,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'capybara'
   gem 'simplecov', require: false
-  gem 'dontenv-rails'
+  gem 'dotenv-rails'
 end
 
 group :development do
