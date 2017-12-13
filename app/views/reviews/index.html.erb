@@ -1,0 +1,15 @@
+<div class="reviews" id="reviews-<%= @trip.id %>">
+  <h2>Reviews</h2>
+  <% if @trip.reviews.any? %>
+    <ul>
+      <%= @trip.reviews.each do |review| %>
+      <li><%= "#{review.content} by #{review.user.email}"  %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <h3>There aren't any reviews for this trip location. Be the first!</h3>
+  <% end %>
+  <% if current user %>
+    <%= link_to "Write a review for this location", new_trip_review_path(@trip), id: "new_link", remote: true %>
+  <% end %>
+</div>

@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-
+  # skip_before_action :authenticate_user, only: [:index]
   def index
     @trip = Trip.find(params[:trip_id])
   end

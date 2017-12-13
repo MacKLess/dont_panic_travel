@@ -1,0 +1,19 @@
+<%= render 'layouts/errors', :object => @reviews %>
+
+<% if @trip %>
+  <%= form_for [@trip, @review] do |f| %>
+    <div class="form-group">
+      <%= f.label :content, class: 'control-label' %>
+      <%= f.text_area :content, class: 'form-control' %>
+    </div>
+    <%= f.submit "Save", class: "btn" %>
+  <% end %>
+<% else %>
+  <%= form_form @review do |f| %>
+    <div class="form-group">
+      <%= f.label :content, class: 'control-label' %>
+      <%= f.text_area :content, class: 'form-control' %>
+    </div>
+    <%= f.submit "Save", class: "btn" %>
+  <% end %>
+<% end %>

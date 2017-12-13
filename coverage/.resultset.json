@@ -546,6 +546,14 @@
       "/Users/Guest/Desktop/dont_panic_travel/app/controllers/application_controller.rb": [
         1,
         1,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        null,
+        null,
         null
       ],
       "/Users/Guest/Desktop/dont_panic_travel/app/helpers/application_helper.rb": [
@@ -761,6 +769,6 @@
         null
       ]
     },
-    "timestamp": 1513195041
+    "timestamp": 1513197814
   }
 }
