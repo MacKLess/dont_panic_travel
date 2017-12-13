@@ -11,7 +11,7 @@ class ReviewsController < ApplicationController
       render :new
     else
       flash[:alert] = "You have to log in to leave a travel review."
-      redirect_to 'sign_in'
+      redirect_to '/sign_in'
     end
   end
 
@@ -32,14 +32,14 @@ class ReviewsController < ApplicationController
       end
     else
       flash[:alert] = "You have to be logged in to brag about your trip."
-      redirect_to 'sign_in'
+      redirect_to '/sign_in'
     end
   end
 
   def edit
     @trip = Trip.find(params[:trip_id])
     @review = @trip.reviews.find(params[:id])
-    if current_user == @review.user(:user_id)
+    if current_user == @review.user
       render :edit
     else
       flash[:alert] = "Whoops! This isn't your review. You'll have to make your own. Have a canapes!"
@@ -50,7 +50,7 @@ class ReviewsController < ApplicationController
   def update
     @trip = Trip.find(params[:trip_id])
     @review = @trip.reviews.find(params[:id])
-    if current.user == @review.user(:user_id)
+    if current.user == @review.user
       if @review.update(review_params)
         flash[:notice] = "You have successfully updated this review. Can I pour you a Pan Galactic Gargle Blaster?"
       else
@@ -58,7 +58,7 @@ class ReviewsController < ApplicationController
         render :edit
       end
     else
-      flash[:alert] "This isn't your review. Oh god, I'm so depressed."
+      flash[:alert] = "This isn't your review. Oh god, I'm so depressed."
     end
     redirect_to trip_path(@trip)
   end
@@ -66,7 +66,7 @@ class ReviewsController < ApplicationController
   def destroy
     @trip = Trip.find(params[:trip_id])
     @review = @trip.reviews.find(params[:id])
-    if (current_user == @review.user(:user_id)) || current.user.admin?
+    if (current_user == @review.user) || current_user.admin?
       @review.destroy
       flash[:notice] = "I hope you grabbed your towel. This review was destroyed to make way for a hyperspace bypass."
     else
