@@ -6,6 +6,14 @@ class TripsController < ApplicationController
   end
 
   def show
-    @destination = Destination.find(params[:id])
+    destination_id = params[:id]
+    destination_object = Destination.new
+    @trip = destination_object.get_one(destination_id)
+  end
+
+  def search_planet
+    destination_id = params[:id]
+    destination_object = Destination.new
+    @destination = destination_object.get_planet(destination_id)
   end
 end

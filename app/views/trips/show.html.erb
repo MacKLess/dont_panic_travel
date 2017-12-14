@@ -1,9 +1,9 @@
 <h5><%= link_to "Return to Trip List", trips_path %></h5>
 
-<h1><%= "#{@trip.location}, #{@trip.planet}" %></h1>
+<h1><%= "#{@trip["location"]}, #{@trip["planet"]}" %></h1>
 
 <hr>
-<h2>Travel accomodations: <%= @trip.transportation %></h2>
-<h2>Local population: <%= @trip.locals %></h2>
+<h2>Travel accomodations: <%= "#{@trip["transportation"]}" %></h2>
+<h2>Local population: <%= "#{@trip["locals"]}" %></h2>
 
 <h4><%= link_to "Reviews of this travel package", trip_reviews_path(@trip) %></h4>
