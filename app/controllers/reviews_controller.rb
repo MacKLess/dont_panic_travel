@@ -1,12 +1,8 @@
 class ReviewsController < ApplicationController
 
   def index
-    if params[:trip_id]
-      @trip = Trip.find(params[:trip_id])
-      @reviews = @trip.reviews
-    else
-      @reviews = @trip.reviews
-    end
+    @trip = Trip.find(params[:id])
+    @reviews = @trip.reviews
   end
 
   def show
