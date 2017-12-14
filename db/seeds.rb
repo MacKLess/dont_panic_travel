@@ -15,9 +15,10 @@ end
 
 rng = Random.new
 
-@destinations.each do |destination|
-  dest = Destination.find_by(location: location)
-
+trips = Trip.all
+trips.each do |trip|
+  trip = Trip.find_by(location: location)
+  
   3.times do
     dest.reviews.create!(rating: rng.rand(1..5),
                           content: Faker::RickAndMorty.quote,
